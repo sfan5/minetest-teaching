@@ -189,7 +189,7 @@ minetest.register_on_placenode(function(pos, newnode, placer, oldnode, itemstack
 	end
 end)
 
-local s = 'ABCEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+local s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 for i in s:gmatch('.') do
 	register_util_node(i, i, i)
 end
