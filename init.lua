@@ -158,6 +158,7 @@ minetest.register_node('teaching:lab_checker', {
 							-- Someone wants to place a utility node, we can do that
 							local newpos = {x=pos.x, y=pos.y+1, z=pos.z} -- XXX: This assumes said person wants to place node on top
 							minetest.set_node(newpos, {name=itemstack:get_name(), param2=minetest.dir_to_facedir(clicker:get_look_dir())})
+							itemstack:take_item()
 							minetest.log('action', clicker:get_player_name() .. ' places ' .. node.name .. ' at ' .. minetest.pos_to_string(newpos))
 							check_solution(pos, clicker)
 						end -- We don't have way to pass on_rightclick along
