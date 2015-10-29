@@ -63,7 +63,7 @@ local function register_util_node(name, digit, humanname)
 			'teaching_lab.png', 'teaching_lab.png', 'teaching_lab_util_' .. name .. '.png'},
 		paramtype2 = 'facedir',
 		description = humanname,
-		groups = {teaching_util=1, snappy=2},
+		groups = {teaching_util=1, snappy=3},
 		teaching_digit = digit,
 		can_dig = function(pos, player)
 			if minetest.check_player_privs(player:get_player_name(), {teacher=true}) then
