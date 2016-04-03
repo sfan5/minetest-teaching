@@ -45,7 +45,11 @@ local function check_solution(pos, player)
 		end
 		if meta:get_string('b_dispense') == 'true' then
 			minetest.add_item({x=pos.x, y=pos.y+2, z=pos.z}, meta:get_inventory():get_list('dispense')[1])
+                        
 		end
+                
+                -- make node indestructible by students
+                minetest.set_node({x=pos.x, y=pos.y, z=pos.z}, {name="teaching:lab"})
 	end
 end
 
