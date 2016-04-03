@@ -1,3 +1,4 @@
+-- check if node at pos is a digit
 local function node_is_digit(pos)
 	local node = minetest.get_node(pos)
 	local nd = minetest.registered_nodes[node.name]
@@ -13,6 +14,7 @@ local function node_is_digit(pos)
 	return true
 end
 
+-- check if node at pos is the digit dg
 local function node_is_spec_digit(pos, dg)
 	if not node_is_digit(pos) then
 		return false
@@ -33,6 +35,7 @@ local function node_is_spec_digit(pos, dg)
 	return false
 end
 
+-- check a solution placed by player (checker node at pos) and give prizes if correct
 local function check_solution(pos, player)
 	local meta = minetest.get_meta(pos)
 	local sol = meta:get_string('solution')
@@ -46,6 +49,7 @@ local function check_solution(pos, player)
 	end
 end
 
+-- can_dig callback that only allows teachers or freebuild to destroy the node
 local function only_dig_teacher_or_freebuild(pos, player)
 	if minetest.check_player_privs(player:get_player_name(), {teacher=true}) then
 		return true
@@ -70,7 +74,7 @@ local function register_util_node(name, digit, humanname)
 				return true
 			else
 				local node = minetest.get_node({x=pos.x, y=pos.y-1, z=pos.z})
-				if node.name == 'teaching:lab_checker' then
+				if node.name == 'teaching:lab_checker' or node.name == 'teaching:lab_allowdig' then
 					return true
 				else
 					return false
@@ -98,6 +102,14 @@ minetest.register_node('teaching:lab', {
 		can_dig = only_dig_teacher_or_freebuild,
 })
 
+minetest.register_node('teaching:lab_allowdig', {
+		drawtype = 'normal',
+		tiles = {'teaching_lab_allowdig.png'},
+		description = 'Allow-dig block (allows students to break block above)',
+		groups = {oddly_breakable_by_hand=2},
+		can_dig = only_dig_teacher_or_freebuild,
+})
+
 local checker_formspec = 
 	'size[8,9]'..
 	'field[0.5,0.5;3,1;solution;Correct solution:;${solution}]'..
@@ -115,7 +127,7 @@ minetest.register_on_player_receive_fields(function(sender, formname, fields)
 		local pos = {x=tonumber(x), y=tonumber(y), z=tonumber(z)}
 		--print("Checker at " .. minetest.pos_to_string(pos) .. " got " .. dump(fields))
 		local meta = minetest.get_meta(pos)
-		if fields.b_saytext ~= nil then -- If we get b_saytext or b_dispense we need to save that immediantly because they are not sent on clicking 'Save' (due a bug in minetest)
+		if fields.b_saytext ~= nil then -- If we get b_saytext or b_dispense we need to save that immediately because they are not sent on clicking 'Save' (due a bug in minetest)
 			meta:set_string('b_saytext', fields.b_saytext)
 		end
 		if fields.b_dispense ~= nil then -- ditto
@@ -201,6 +213,6 @@ register_util_node('equals', '=', '= (Equals)')
 register_util_node('less', '<', '< (Less than)')
 register_util_node('minus', '-', '- (Minus)')
 register_util_node('more', '>', '> (More than)')
-register_util_node('multiplicate', {'*', 'x'}, '* (Multiplicate)')
+register_util_node('multiply', {'*', 'x'}, '* (Multiply)')
 register_util_node('plus', '+', '+ (Plus)')
 
