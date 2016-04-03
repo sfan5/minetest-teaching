@@ -46,6 +46,10 @@ local function check_solution(pos, player)
 		if meta:get_string('b_dispense') == 'true' then
 			minetest.add_item({x=pos.x, y=pos.y+2, z=pos.z}, meta:get_inventory():get_list('dispense')[1])
 		end
+		if meta:get_string('b_lock') == 'true' then
+			-- Place a lab block (indestructible for students) where the solution was
+			minetest.set_node({x=pos.x, y=pos.y+1, z=pos.z}, {name="teaching:lab"})
+		end
 	end
 end
 
@@ -112,7 +116,8 @@ minetest.register_node('teaching:lab_allowdig', {
 
 local checker_formspec = 
 	'size[8,9]'..
-	'field[0.5,0.5;3,1;solution;Correct solution:;${solution}]'..
+	'field[0.5,0.5;2,1;solution;Correct solution:;${solution}]'..
+	'checkbox[2.5,0.2;b_lock;Lock once solved?;${b_lock}]'..
 	'label[0.25,1;Action if right:]'..
 	'checkbox[0.5,1.5;b_saytext;Say text:;${b_saytext}]'..
 	'field[2.4,1.9;3,0.75;s_saytext;;${s_saytext}]'..
@@ -127,11 +132,14 @@ minetest.register_on_player_receive_fields(function(sender, formname, fields)
 		local pos = {x=tonumber(x), y=tonumber(y), z=tonumber(z)}
 		--print("Checker at " .. minetest.pos_to_string(pos) .. " got " .. dump(fields))
 		local meta = minetest.get_meta(pos)
-		if fields.b_saytext ~= nil then -- If we get b_saytext or b_dispense we need to save that immediately because they are not sent on clicking 'Save' (due a bug in minetest)
+		if fields.b_saytext ~= nil then -- If we get a checkbox value we need to save that immediately because they are not sent on clicking 'Save' (due to a bug in minetest)
 			meta:set_string('b_saytext', fields.b_saytext)
 		end
 		if fields.b_dispense ~= nil then -- ditto
 			meta:set_string('b_dispense', fields.b_dispense)
+		end
+		if fields.b_lock ~= nil then -- ditto
+			meta:set_string('b_lock', fields.b_lock)
 		end
 		if fields.save ~= nil then
 			meta:set_string('solution', fields.solution)
@@ -168,7 +176,7 @@ minetest.register_node('teaching:lab_checker', {
 					if minetest.registered_nodes[itemstack:get_name()] ~= nil then
 						if minetest.registered_nodes[itemstack:get_name()].teaching_digit ~= nil then
 							-- Someone wants to place a utility node, we can do that
-							local newpos = {x=pos.x, y=pos.y+1, z=pos.z} -- XXX: This assumes said person wants to place node on top
+							local newpos = {x=pos.x, y=pos.y+1, z=pos.z} -- FIXME: This assumes said person wants to place node on top
 							minetest.set_node(newpos, {name=itemstack:get_name(), param2=minetest.dir_to_facedir(clicker:get_look_dir())})
 							itemstack:take_item()
 							minetest.log('action', clicker:get_player_name() .. ' places ' .. node.name .. ' at ' .. minetest.pos_to_string(newpos))
