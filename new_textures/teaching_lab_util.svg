@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64"
+   height="64"
+   viewBox="0 0 16.933333 16.933334"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="teaching_lab_util.svg"
+   inkscape:export-filename="/home/victor/Documents/Github/minetest-teaching/new_textures/teaching_lab_util_percent.png"
+   inkscape:export-xdpi="94.500008"
+   inkscape:export-ydpi="94.500008">
+  <defs
+     id="defs2">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 8.466667 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="16.933333 : 8.466667 : 1"
+       inkscape:persp3d-origin="8.4666665 : 5.6444447 : 1"
+       id="perspective951" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="26.352526"
+     inkscape:cy="45.211141"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1299"
+     inkscape:window-height="702"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-280.06665)">
+    <rect
+       style="opacity:1;fill:#dcdcdc;fill-opacity:1;stroke:none;stroke-width:8.13397503;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:571.20001221;stroke-opacity:1"
+       id="rect835"
+       width="16.933332"
+       height="16.933332"
+       x="0"
+       y="280.06665"
+       ry="1.6296418e-17"
+       inkscape:export-xdpi="94"
+       inkscape:export-ydpi="94" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.99861956px;line-height:1.25;font-family:'Noto Serif CJK TC';-inkscape-font-specification:'Noto Serif CJK TC Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09373382"
+       x="9.8877039"
+       y="286.40985"
+       id="text997"><tspan
+         sodipodi:role="line"
+         id="tspan995"
+         x="9.8877039"
+         y="294.44846"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:MathJax_Size4;-inkscape-font-specification:MathJax_Size4;stroke-width:0.09373382" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.14047527px;line-height:1.25;font-family:MathJax_Size4;-inkscape-font-specification:'MathJax_Size4 Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07195868"
+       x="3.2565818"
+       y="285.33923"
+       id="text1066"><tspan
+         sodipodi:role="line"
+         id="tspan1064"
+         x="3.2565818"
+         y="289.68875"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:MathJax_Size4;-inkscape-font-specification:MathJax_Size4;stroke-width:0.07195868" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9355545px;line-height:1.25;font-family:MathJax_Size4;-inkscape-font-specification:'MathJax_Size4 Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19846353"
+       x="5.4204044"
+       y="293.224"
+       id="text1093"><tspan
+         sodipodi:role="line"
+         id="tspan1091"
+         x="5.4204044"
+         y="305.22003"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'DejaVu Math TeX Gyre';-inkscape-font-specification:'DejaVu Math TeX Gyre Bold';stroke-width:0.19846353" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.63888931px;line-height:1.25;font-family:MathJax_Size4;-inkscape-font-specification:'MathJax_Size4 Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="3.2473464"
+       y="293.34784"
+       id="text1167"><tspan
+         sodipodi:role="line"
+         id="tspan1165"
+         x="3.2473464"
+         y="293.34784"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:MathJax_Size4;-inkscape-font-specification:MathJax_Size4;stroke-width:0.26458332">v</tspan></text>
+  </g>
+</svg>
